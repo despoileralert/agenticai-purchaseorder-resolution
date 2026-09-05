@@ -23,6 +23,7 @@ dependencies = [
     "langchain-openai>=1.6.0",
     "pyyaml>=6.0.3",
     "deepagents>=0.7.13",
+    "reportlab>=5.0.1",
 ]
 
 [package.optional-dependencies]

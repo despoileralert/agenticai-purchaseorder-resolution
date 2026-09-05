@@ -3,6 +3,7 @@ from logging import ERROR, INFO
 from typing import List, Dict, Any
 from pydantic import BaseModel
 from agenticai_purchaseorder_resolution.utils.helpers import basicLogger, read_yaml
+from langchain_core.tools import StructuredTool, tool, BaseTool
 
 """
 Defines the base agent class that all agents inherits from, providing a standardized interface 
@@ -24,34 +25,34 @@ class AgentConfig(BaseModel):
     
 
 class BaseAgent(ABC):
-    def __init__(self, tools: List[Dict[str, Any]], config=read_yaml("config/agent_configs.yaml")):
+    def __init__(self, tools: List[BaseTool], config=read_yaml("config/agent_configs.yaml")):
         self.config = config
-        self.tools: List[Dict[str, Any]] = tools
+        self.tools: List[BaseTool] = tools
         self.memory: List[Dict[str, Any]] = []
         self.state = {}
         self.logger = basicLogger("mainLogger")
 
     # Final method: All agents track execution the exact same way
-    def execute_tool(self, tool_name: str, arguments: dict) -> Any:
+    def execute_tool(self, tool: BaseTool, arguments: dict) -> Any:
         """
         Execute a tool by name with the provided arguments.
 
         Args:
-            tool_name (str): The name of the tool to execute.
+            tool (BaseTool): The tool to execute.
             arguments (dict): A dictionary of arguments to pass to the tool.
         
         Returns:
             Any: The result of the tool execution or an error message if the tool fails.
         """
-        self.logger.info(f"Executing {tool_name}")
-        if tool_name not in self.tools[0]:
-            self.logger.error(f"Tool {tool_name} not found in available tools: {list(self.tools)}")
-            return f"Error: Tool {tool_name} not found."
+        self.logger.info(f"Executing {tool.name}")
+        if tool not in self.tools:
+            self.logger.error(f"Tool {tool.name} not found in available tools: {list(t.name for t in self.tools)}")
+            return f"Error: Tool {tool.name} not found."
         try:
-            return self.tools[0][tool_name](**arguments)
+            return tool.invoke(input = arguments)
         except Exception as e:
-            self.logger.error(f"Tool {tool_name} execution failed with error: {str(e)}")
-            return self._handle_tool_failure(tool_name, e)
+            self.logger.error(f"Tool {tool.name} execution failed with error: {str(e)}")
+            return self._handle_tool_failure(tool.name, e)
 
     # Abstract methods: Forced implementation in child classes
     
