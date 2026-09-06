@@ -37,11 +37,12 @@ def extract_invoice(bucket: str, key: str, task: str) -> dict:
         QueriesConfig={
             "Queries": [
                 {"Text": "What is the vendor name?", "Alias": "VENDOR_NAME"},
-                {"Text": "What is the vendor contact email?", "Alias": "VENDOR_EMAIL"},
+                {"Text": "What is the vendor contact email to query to?", "Alias": "VENDOR_EMAIL"},
                 {"Text": "What is the vendor ID?", "Alias": "VENDOR_ID"},
-                {"Text": "What is the invoice number?", "Alias": "INVOICE_ID"},
-                {"Text": "What is the purchase order number?", "Alias": "PO_ID"},
+                {"Text": "What is the invoice ID that is a long alphanumeric string?", "Alias": "INVOICE_ID"},
+                {"Text": "What is the purchase order ID that is a long alphanumeric string?", "Alias": "PO_ID"},
                 {"Text": "What is the expected delivery date?", "Alias": "EXPECTED_DELIVERY"},
+                {"Text": "What are/were the delivery dates of the goods?", "Alias": "DELIVERY_DATES"}
             ]
         }
     )
@@ -68,6 +69,7 @@ def extract_invoice(bucket: str, key: str, task: str) -> dict:
 
                     if answer_block:
                         answers[alias] = answer_block.get("Text")
+    print(answers)
 
     # ---------------------------------------------------------
     # 2. Extract tables
@@ -165,11 +167,10 @@ def extract_invoice(bucket: str, key: str, task: str) -> dict:
 
         "purchase_order_id": answers.get("PO_ID") or str(uuid.uuid4()),
 
-        "delivery_dates": [],
+        "delivery_dates": answers.get("DELIVERY_DATES"),
 
         "vendor_info": {
             "name": answers.get("VENDOR_NAME"),
             "contact": answers.get("VENDOR_EMAIL")
         }
     }
-
