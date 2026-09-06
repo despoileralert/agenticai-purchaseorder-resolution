@@ -10,3 +10,6 @@ wheels/
 .venv
 .env
 .python-version
+logs/
+
+logfile.log
