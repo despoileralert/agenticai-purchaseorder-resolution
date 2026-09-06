@@ -60,11 +60,11 @@ def validate_item_match(request: ReplacementRequest, offer: SupplierOffer) -> It
 
     Requested item:
     Part number: {request.part_number}
-    Description: {request.description}
+    Vendor name: {request.vendor_name}
 
     Supplier item:
     Part number: {offer.part_number}
-    Description: {offer.description}
+    Supplier name: {offer.supplier_name}
     
     Return ONLY valid JSON using this exact structure:
 
@@ -92,8 +92,8 @@ def draft_purchase_email(request: ReplacementRequest, recommendation: ValidatedO
     Supplier: {recommendation.offer.supplier_name}
     Email: {recommendation.offer.supplier_email}
     Part: {request.part_number}
-    Description: {request.description}
-    Quoted unit price: {recommendation.offer.currency} {recommendation.offer.unit_price}
+    Quantity: {request.quantity}
+    Quoted unit price: SGD {recommendation.offer.unit_price}
     
     Do not invent delivery dates, prices, quantities, specifications or commercial terms.
     
@@ -102,7 +102,6 @@ def draft_purchase_email(request: ReplacementRequest, recommendation: ValidatedO
     Return ONLY valid JSON:
 
     {{
-        "to": "...",
         "subject": "...",
         "body": "..."
     }}

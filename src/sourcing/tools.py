@@ -1,45 +1,31 @@
 from .models import ReplacementRequest, SupplierOffer
 
-demo_request = ReplacementRequest(
-    order_item_id=50,
-    part_number="SKF 6205-2RS1",
-    description="25mm x 52mm x 15mm Sealed Bearing",
-    unit_price=5.00,
-    quantity=2,
-    currency="SGD",
-)
 
 demo_supplier_list = [
     SupplierOffer(
-        supplier_name="Supplier B",
-        supplier_email="sales@b.com",
-        part_number="SKF 6205-2Z",
-        description="25x52x15 Bearing",
-        unit_price=8.50,
-        currency="SGD",
+        supplier_name="Horizon Components Pte Ltd.",
+        supplier_email="sales@horizon.com",
+        part_number="30112A",
         available_quantity=1000,
+        unit_price=420.69,
         lead_time_days=4,
     ),
     SupplierOffer(
-        supplier_name="Supplier C",
-        supplier_email="sales@c.com",
-        part_number="FAG 6205-2RSR",
-        description="Deep Groove Ball Bearing 25x52x15",
-        unit_price=7.20,
-        currency="SGD",
+        supplier_name="Solar Systems Inc.",
+        supplier_email="sales@solar.com",
+        part_number="30121",
         available_quantity=800,
+        unit_price=467.67,
         lead_time_days=2,
     ),
     SupplierOffer(
-        supplier_name="Supplier C",
-        supplier_email="sales@c.com",
-        part_number="SKF 6205-2RS1/C3",
-        description="Bearing",
-        unit_price=4.50,
-        currency="SGD",
+        supplier_name="LunarTech Corporation",
+        supplier_email="sales@lunartech.com",
+        part_number="30112",
         available_quantity=10000,
+        unit_price=488.32,
         lead_time_days=1,
-    ),
+    )
 ]
 
 

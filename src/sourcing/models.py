@@ -1,31 +1,23 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import TypedDict
 
 class ReplacementRequest(BaseModel):
-    order_item_id: int
     part_number: str
-    description: str
-    unit_price: float
     quantity: int
-    currency: str
+    unit_price: float
+    vendor_name: str
 
 
 class SupplierOffer(BaseModel):
     supplier_name: str
     supplier_email: str
-
     part_number: str
-    description: str
-
-    unit_price: float
-    currency: str
     available_quantity: int
-
+    unit_price: float
     lead_time_days: int | None = None
 
 
 class EmailDraft(BaseModel):
-    to: EmailStr
     subject: str
     body: str
 

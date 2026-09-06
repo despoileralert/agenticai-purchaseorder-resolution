@@ -1,11 +1,9 @@
-# Mock database to simulate PostgreSQL
+# Mock database to simulate an actual DB
 
-invoices = []
-
-orders = []
-
-order_items = []
-
-replacement_requests = []
-
-activity_log = []
+db = {
+    "vendors": [],
+    "invoices": [],
+    "purchase_orders": [],
+    "order_items": [],
+    "replacement_requests": []
+}
