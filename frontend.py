@@ -1,6 +1,8 @@
 import streamlit as st
+import json
 
-# from src.agenticai_purchaseorder_resolution.agents import workflow_agents
+from src.agenticai_purchaseorder_resolution.agents.workflow_agents import InvoiceExtractionAgent
+from agenticai_purchaseorder_resolution.utils.tools import extract_invoice
 from orchestration.graph import orchestrator
 from repositories.repository import get_all_order_items, save_parsed_invoice, clear_database
 
@@ -19,9 +21,23 @@ def initialize_state():
 
 initialize_state()
 
+@st.cache_resource
+def get_invoice_agent():
+    return InvoiceExtractionAgent(tools=[extract_invoice])
+
 
 # Temporary mock agent 1
 def parse_invoice(uploaded_file):
+    invoice_agent = get_invoice_agent()
+    # task = "Can you extract structured data from the invoice b92929cd_7204_465d_b7bf_f8946a395f53_inv_2026_4100.pdf under the bucket \
+    #            textract-console-us-east-1-886235d2-d763-4a23-b78a-7f0375f8038d?"
+
+    # task = "Can you extract structured data from the invoice INV-2026-4100.pdf under the bucket \
+    #         textract-console-ap-southeast-1-56e9d1de-c238-48a1-b770-926a9e7?"
+    # result = invoice_agent.run(task)
+    # invoice = json.loads(result)
+
+    # mock result
     invoice = {
         "line_items": [
             {"part_number": "30112", "quantity": 250, "unit_price": 349.38},
@@ -38,12 +54,14 @@ def parse_invoice(uploaded_file):
     parsed_invoice = []
     for item in invoice["line_items"]:
         parsed_invoice.append({
-            "line_item": item,
+            "part_number": item["part_number"],
+            "quantity": item["quantity"],
+            "unit_price": item["unit_price"],
             "vendor_id": invoice["vendor_id"],
             "invoice_id": invoice["invoice_id"],
             "expected_delivery_date": invoice["expected_delivery_date"],
             "purchase_order_id": invoice["purchase_order_id"],
-            "delivery_dates": [],
+            "delivery_dates": invoice["delivery_dates"],
             "vendor_name": invoice["vendor_info"]["name"],
             "vendor_contact": invoice["vendor_info"]["contact"]
         })
@@ -60,10 +78,10 @@ def show_main_page():
         if st.button("Process Invoice", type="primary"):
             with st.spinner("Parsing invoice..."):
                 invoice = parse_invoice(uploaded_file)
+                st.success("Invoice parsed successfully!")
                 for item in invoice:
                     st.session_state.orders.append(item)
 
-            st.success("Invoice processed successfully.")
             # st.rerun()
 
     if not st.session_state.orders:
