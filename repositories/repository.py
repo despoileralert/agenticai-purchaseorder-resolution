@@ -8,7 +8,7 @@ def save_parsed_invoice(parsed_invoice: dict) -> None:
 
     vendor_info = parsed_invoice["vendor_info"]
     line_items = parsed_invoice["line_items"]
-    delivery_dates = parsed_invoice.get("delivery_dates", [])
+    delivery_dates = parsed_invoice.get("delivery_dates", "")
 
     # Vendor
     vendor = {

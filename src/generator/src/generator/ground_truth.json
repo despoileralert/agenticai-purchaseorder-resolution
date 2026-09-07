@@ -1,0 +1,421 @@
+{
+  "seed": 20260907,
+  "invoices": [
+    {
+      "pdf": "pdfs/INV-2026-4100.pdf",
+      "layout_variant": 0,
+      "line_count": 2,
+      "has_expected_delivery_date": false,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "30112",
+            "quantity": 250,
+            "unit_price": 349.38
+          },
+          {
+            "part_number": "88204",
+            "quantity": 25,
+            "unit_price": 123.79
+          }
+        ],
+        "vendor_id": "5a2c1ca6-30ca-45b9-98c8-abc23e5062c4",
+        "invoice_id": "77806509-a02e-41ca-b092-9cbb203c479f",
+        "expected_delivery_date": null,
+        "purchase_order_id": "2f7befe9-0309-413c-8007-a04f59d4e8ea",
+        "delivery_dates": [
+          "2026-07-17",
+          "2026-09-30"
+        ],
+        "vendor_info": {
+          "name": "Meridian Components Pte Ltd",
+          "contact": "accounts@meridian-components.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4101.pdf",
+      "layout_variant": 1,
+      "line_count": 2,
+      "has_expected_delivery_date": true,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "44201",
+            "quantity": 12,
+            "unit_price": 7.3
+          },
+          {
+            "part_number": "55744",
+            "quantity": 250,
+            "unit_price": 339.72
+          }
+        ],
+        "vendor_id": "8133fb9d-fa14-4606-9c9c-08d37bf71937",
+        "invoice_id": "6f076ef9-6964-4e41-b625-c3edfbf48200",
+        "expected_delivery_date": "2026-07-18",
+        "purchase_order_id": "320bead6-e0f4-43ae-9a44-c36ede487065",
+        "delivery_dates": [
+          "2026-06-14",
+          "2026-08-12"
+        ],
+        "vendor_info": {
+          "name": "Harbourline Industrial Supply",
+          "contact": "ar.team@harbourline-supply.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4102.pdf",
+      "layout_variant": 2,
+      "line_count": 1,
+      "has_expected_delivery_date": true,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "67012",
+            "quantity": 2,
+            "unit_price": 190.32
+          }
+        ],
+        "vendor_id": "68671530-c13d-4b80-b70c-feaa39121498",
+        "invoice_id": "6528615a-447e-4985-aac2-699bb4bb0e9f",
+        "expected_delivery_date": "2026-01-21",
+        "purchase_order_id": "6b06b5e1-bb06-49e6-8ae9-44d914f4ba3f",
+        "delivery_dates": [
+          "2025-12-30"
+        ],
+        "vendor_info": {
+          "name": "Ashgrove Fasteners Ltd",
+          "contact": "billing@ashgrovefasteners.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4103.pdf",
+      "layout_variant": 0,
+      "line_count": 3,
+      "has_expected_delivery_date": false,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "10457",
+            "quantity": 12,
+            "unit_price": 22.47
+          },
+          {
+            "part_number": "30112",
+            "quantity": 10,
+            "unit_price": 47.14
+          },
+          {
+            "part_number": "44201",
+            "quantity": 250,
+            "unit_price": 367.58
+          }
+        ],
+        "vendor_id": "d5662b40-1347-43de-bdbb-5531e7131329",
+        "invoice_id": "d47a957c-2c7e-48de-bec0-858b4685ddb4",
+        "expected_delivery_date": null,
+        "purchase_order_id": "0d6aec46-43ca-487c-80bf-eda8d4d4ae87",
+        "delivery_dates": [
+          "2026-04-18",
+          "2026-04-12",
+          "2026-03-09"
+        ],
+        "vendor_info": {
+          "name": "Nordkap Precision AS",
+          "contact": "faktura@nordkap-precision.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4104.pdf",
+      "layout_variant": 1,
+      "line_count": 4,
+      "has_expected_delivery_date": true,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "55744",
+            "quantity": 12,
+            "unit_price": 472.24
+          },
+          {
+            "part_number": "30119",
+            "quantity": 100,
+            "unit_price": 43.16
+          },
+          {
+            "part_number": "88204",
+            "quantity": 25,
+            "unit_price": 464.4
+          },
+          {
+            "part_number": "44201",
+            "quantity": 25,
+            "unit_price": 144.44
+          }
+        ],
+        "vendor_id": "e643db5b-1e4d-4d48-9496-0633f8745c6e",
+        "invoice_id": "5d675092-d70f-4337-b0ed-5accdb39c3e1",
+        "expected_delivery_date": "2026-09-29",
+        "purchase_order_id": "5d76dadf-c32d-4594-8a58-4e5d48db233e",
+        "delivery_dates": [
+          "2026-08-25",
+          "2026-08-14",
+          "2026-11-25",
+          "2026-10-27"
+        ],
+        "vendor_info": {
+          "name": "Tan & Sons Packaging",
+          "contact": "invoices@tanandsons.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4105.pdf",
+      "layout_variant": 2,
+      "line_count": 5,
+      "has_expected_delivery_date": false,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "44201",
+            "quantity": 5,
+            "unit_price": 303.09
+          },
+          {
+            "part_number": "55744",
+            "quantity": 144,
+            "unit_price": 464.47
+          },
+          {
+            "part_number": "10442",
+            "quantity": 40,
+            "unit_price": 466.8
+          },
+          {
+            "part_number": "71355",
+            "quantity": 2,
+            "unit_price": 219.15
+          },
+          {
+            "part_number": "67012",
+            "quantity": 50,
+            "unit_price": 329.85
+          }
+        ],
+        "vendor_id": "5a54f94e-f94e-4528-9689-5b6f3d5cebaa",
+        "invoice_id": "f1a42e84-87c7-43f2-a6d8-b65ac027f77d",
+        "expected_delivery_date": null,
+        "purchase_order_id": "572bda62-d44d-4714-83c2-57dc57921951",
+        "delivery_dates": [
+          "2026-02-20",
+          "2026-05-10",
+          "2026-02-14",
+          "2026-03-10",
+          "2026-01-31"
+        ],
+        "vendor_info": {
+          "name": "Vector Polymer Works",
+          "contact": "remittance@vectorpolymer.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4106.pdf",
+      "layout_variant": 0,
+      "line_count": 8,
+      "has_expected_delivery_date": true,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "55730",
+            "quantity": 100,
+            "unit_price": 204.32
+          },
+          {
+            "part_number": "44201",
+            "quantity": 144,
+            "unit_price": 2.74
+          },
+          {
+            "part_number": "67012",
+            "quantity": 10,
+            "unit_price": 434.1
+          },
+          {
+            "part_number": "10457",
+            "quantity": 2,
+            "unit_price": 472.7
+          },
+          {
+            "part_number": "21883",
+            "quantity": 24,
+            "unit_price": 13.19
+          },
+          {
+            "part_number": "71390",
+            "quantity": 2,
+            "unit_price": 306.02
+          },
+          {
+            "part_number": "55744",
+            "quantity": 10,
+            "unit_price": 307.07
+          },
+          {
+            "part_number": "71355",
+            "quantity": 50,
+            "unit_price": 409.95
+          }
+        ],
+        "vendor_id": "329e91ce-1cec-4a33-859a-529f58b84b02",
+        "invoice_id": "45f4ebad-39f2-424d-ac9d-ba0a291e41f5",
+        "expected_delivery_date": "2026-02-25",
+        "purchase_order_id": "76d7ada9-09a1-453b-b867-468b4c3df7a7",
+        "delivery_dates": [
+          "2026-03-23",
+          "2026-02-12",
+          "2026-03-29",
+          "2026-05-05",
+          "2026-03-03",
+          "2026-05-07",
+          "2026-03-26",
+          "2026-05-08"
+        ],
+        "vendor_info": {
+          "name": "Caldera Metals GmbH",
+          "contact": "kreditoren@caldera-metals.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4107.pdf",
+      "layout_variant": 1,
+      "line_count": 3,
+      "has_expected_delivery_date": true,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "10442",
+            "quantity": 8,
+            "unit_price": 234.8
+          },
+          {
+            "part_number": "44201",
+            "quantity": 10,
+            "unit_price": 279.83
+          },
+          {
+            "part_number": "88204",
+            "quantity": 100,
+            "unit_price": 343.02
+          }
+        ],
+        "vendor_id": "75e0592f-f079-4bc9-8796-bef95177295b",
+        "invoice_id": "a0c64bed-7973-4c51-9905-65194c052c42",
+        "expected_delivery_date": "2026-09-15",
+        "purchase_order_id": "5d7767c1-e032-4868-b7e9-f090b3cb7a5c",
+        "delivery_dates": [
+          "2026-08-10",
+          "2026-09-11",
+          "2026-08-23"
+        ],
+        "vendor_info": {
+          "name": "Brightwater Electricals",
+          "contact": "ap@brightwater-elec.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4108.pdf",
+      "layout_variant": 2,
+      "line_count": 6,
+      "has_expected_delivery_date": false,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "71355",
+            "quantity": 144,
+            "unit_price": 170.62
+          },
+          {
+            "part_number": "44201",
+            "quantity": 5,
+            "unit_price": 375.7
+          },
+          {
+            "part_number": "21883",
+            "quantity": 250,
+            "unit_price": 79.74
+          },
+          {
+            "part_number": "88204",
+            "quantity": 144,
+            "unit_price": 54.51
+          },
+          {
+            "part_number": "55744",
+            "quantity": 2,
+            "unit_price": 33.13
+          },
+          {
+            "part_number": "44290",
+            "quantity": 40,
+            "unit_price": 200.0
+          }
+        ],
+        "vendor_id": "c03694cf-8e21-40c6-9d2a-cb649273099e",
+        "invoice_id": "690cece3-9645-40a3-9e69-b5ca83def0ac",
+        "expected_delivery_date": null,
+        "purchase_order_id": "09ae32e8-5344-40a8-a124-37f8326a84a9",
+        "delivery_dates": [
+          "2026-11-02",
+          "2026-09-12",
+          "2026-09-30",
+          "2026-10-10",
+          "2026-09-28",
+          "2026-08-22"
+        ],
+        "vendor_info": {
+          "name": "Meridian Components Pte Ltd",
+          "contact": "accounts@meridian-components.example.com"
+        }
+      }
+    },
+    {
+      "pdf": "pdfs/INV-2026-4109.pdf",
+      "layout_variant": 0,
+      "line_count": 2,
+      "has_expected_delivery_date": true,
+      "expected_output": {
+        "line_items": [
+          {
+            "part_number": "55730",
+            "quantity": 25,
+            "unit_price": 373.26
+          },
+          {
+            "part_number": "71390",
+            "quantity": 25,
+            "unit_price": 313.41
+          }
+        ],
+        "vendor_id": "0bca1986-2f23-4087-82d0-dc266dfe0a45",
+        "invoice_id": "1e864b84-34db-4683-bc16-5c44d06ba199",
+        "expected_delivery_date": "2026-10-05",
+        "purchase_order_id": "d52d063f-9cb0-476a-9bc4-ae0ca374e70f",
+        "delivery_dates": [
+          "2026-08-29",
+          "2026-10-28"
+        ],
+        "vendor_info": {
+          "name": "Harbourline Industrial Supply",
+          "contact": "ar.team@harbourline-supply.example.com"
+        }
+      }
+    }
+  ]
+}
