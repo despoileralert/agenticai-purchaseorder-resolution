@@ -1,16 +1,10 @@
 from typing import Any
 from langchain_core.messages import HumanMessage
 from agenticai_purchaseorder_resolution.agents.workflow_agents import *
-from langgraph.graph import MessagesState
-from langchain.agents.middleware import InputAgentState
-
-
-research_agent_system_prompt = """
-You can only do research. You are working with a chart generator colleague.
-"""
+from agenticai_purchaseorder_resolution.utils.state import *
 
 # Defining Research Agent Node
-def ingestor_node(state: InputAgentState) -> MessagesState:
+def ingestor_node(state: MessagesState):
     invoice_extractor = InvoiceExtractionAgent(tools=[extract_invoice])
     result = invoice_extractor.agent.invoke(state)
 
