@@ -52,7 +52,7 @@ def sourcing_agent_node(state: OrchestratorState):
 
 
 def route_tracking_result(state: OrchestratorState) -> Literal["supplier_sourcing", "finish"]:
-    if state["tracking_status"] in ["DELAYED", "UNAVAILABLE"]:
+    if state["tracking_status"] in ["DELAYED", "CANCELLED", "OUT_OF_STOCK"]:
         return "supplier_sourcing"
 
     return "finish"

@@ -6,3 +6,10 @@ This project will let a purchasing client track order invoices and receipt recor
 Invoice arrives → three-way match against PO and goods receipt → flags the $340 discrepancy → drafts the supplier email asking about it \
 OR \
 Supplier emails "shipment delayed 2 weeks" → agent parses it, checks which production orders depend on that part, finds an alternate supplier with stock, prices the switch, and puts a recommendation in front of a human for approval (Diagram comes later)
+
+# Running instructions
+Ensure the uv package manager is installed. Open the terminal in the root directory and enter
+```bash
+uv sync
+uv run streamlit run app.py
+```

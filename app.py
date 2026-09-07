@@ -37,7 +37,7 @@ def parse_invoice(uploaded_file):
     # result = invoice_agent.run(task)
     # invoice = json.loads(result)
 
-    # mock result
+    # mock invoice agent due to AWS key issues
     invoice = {
         "line_items": [
             {"part_number": "30112", "quantity": 250, "unit_price": 349.38},
