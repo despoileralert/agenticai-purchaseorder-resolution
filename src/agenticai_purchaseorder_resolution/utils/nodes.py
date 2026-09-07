@@ -4,7 +4,7 @@ from agenticai_purchaseorder_resolution.agents.workflow_agents import *
 from agenticai_purchaseorder_resolution.utils.state import *
 
 # Defining Research Agent Node
-def ingestor_node(state: MessagesState):
+def ingestor_node(state):
     invoice_extractor = InvoiceExtractionAgent(tools=[extract_invoice])
     result = invoice_extractor.agent.invoke(state)
 
@@ -14,3 +14,4 @@ def ingestor_node(state: MessagesState):
     return {
         "messages": [last_message],
     }
+
