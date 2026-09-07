@@ -152,7 +152,7 @@ def extract_invoice(bucket: str, key: str, task: str) -> dict:
     # ---------------------------------------------------------
     # 3. Build final object
     # ---------------------------------------------------------
-    return {
+    final = {
         "line_items": line_items,
 
         "vendor_id": answers.get("VENDOR_ID") or str(uuid.uuid4()),
@@ -173,3 +173,4 @@ def extract_invoice(bucket: str, key: str, task: str) -> dict:
         }
     }
 
+    return final
